@@ -7,14 +7,27 @@ export default  class TodoApp extends React.Component{
 
     constructor(props){
         super(props);
+        this.state={
+            name: 'Student'
+        }
+     
     }
-
-
+onChange(e){
+    this.setState({
+        name:e.target.value
+    })
+    
+}
+   
     render(){
 
         return (
-            <div>
-            <h1>Welcome to ReactJS</h1>
+        <div>
+            <h1>Welcome to ReactJS {this.state.name}</h1>
+            <strong>Enter your name</strong><br/>
+            <form>
+            <input type="text" onChange={this.onChange.bind(this)} />
+            </form>
         </div>
     )
     }
